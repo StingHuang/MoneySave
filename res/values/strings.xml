@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MoneySave</string>
+    <string name="txtTest">Test Text</string>
+<!-- MainActivity -->    
+    <string name="title_y">年</string>
+    <string name="title_m">月</string>
+    <string name="btn_list">List</string>
+    <string name="btn_analysis">Analysis</string>
+    <string-array name="year_list">
+        <item>2015</item>
+    </string-array>
+    <string-array name="month_list">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+    <string name="btn_add">新 增 紀 錄</string>
+    
+    <string name="analysisActivity_title">Analysis</string>
+    
+    <string name="idlg_title">Detail of Item</string>
+    <string name="idlg_btn_update">Update</string>
+    <string name="idlg_btn_delete">Delete</string>
+ 
+<!-- AddNewItemActivity --> 
+    <string name="addActivity_title">Keep Accounts</string>
+    <string name="txt_date">Date: </string>
+    <string name="spn_type_prompt">Type: </string>
+    <string-array name="spn_type_list">
+        <item>支出</item>
+        <item>收入</item>
+        <item>轉移</item>
+    </string-array>
+    <string name="edt_cash_prompt">Cash: </string>
+    <string name="spn_item_type_prompt">Item Tag: </string>
+    <string-array name="spn_item_type_list">
+        <item>食</item>
+        <item>衣</item>
+        <item>住</item>
+        <item>行</item>
+        <item>樂</item>
+        <item>育</item>
+    </string-array>
+    <string name="edt_item_prompt">Item: </string>
+    <string name="spn_cash_from_prompt">From: </string>
+    <string name="spn_cash_to_prompt">To: </string>
+    <string name="btn_ok">OK</string>
+    <string name="dlg_datepick">Choose Date</string>
+    
+<!-- MoneyPreference --> 
+    <string name="setting_activity_title">Setting</string>
+    <string name="setting_f1_budget_title">Setting everyday budget</string>
+    <string name="edt_title">My budget</string>
+    <string name="edtdlg_title">Budget Setting</string>
+    <string name="edtdlg_meg">My budget is</string>
+    <string name="cbox_title">Alarm Clock</string>
+    <string name="cbox_sum">Inform the status of everyday budget</string>
+    <string name="prf_alarm_title">Alarm Clock Setting</string>
+    <string name="prf_alarm_sum">Set the alarm clock for </string>
+    
+    <string name="setting_f2_notify_title">Setting Notification</string>
+    <string name="cbox_notify_title">Notification</string>
+    <string name="cbox_notify_sum">Remind me to record cost</string>
+    <string name="mslist_title">Select time</string>
+    <string name="mslist_sum">Select some specific time for notification</string>
+    <string name="mslist_dlg_title">Select time</string>
+    <string-array name="empty_array"/>
+    <string-array name="time_string">
+        <item>08:00</item>
+        <item>09:00</item>
+        <item>10:00</item>
+        <item>11:00</item>
+        <item>12:00</item>
+        <item>13:00</item>
+        <item>14:00</item>
+        <item>15:00</item>
+        <item>16:00</item>
+        <item>17:00</item>
+        <item>18:00</item>
+        <item>19:00</item>
+        <item>20:00</item>
+        <item>21:00</item>
+    </string-array>
+    <string-array name="time_value">
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+    </string-array> 
+    
+    <string name="setting_f3_backup_title">Setting Backup</string>
+    <string name="cbox_backup_title">Backup Data</string>
+    <string name="cbox_backup_sum">Auto backup your data everyday</string>
+    <string name="prf_recover_data_title">Recover the latest backup data</string>
+    <string name="recover_dlg_title">Recover</string>
+    <string name="recover_dlg_message">Do you want recover the yesterday\'s data? You will lost today\'s new records.</string>
+    <string name="recover_dlg_btn_p">Yes, just do it.</string>
+    <string name="recover_dlg_btn_n">No, thanks.</string>
+    
+<!-- Actioin Menu -->   
+	<string name="action_magAcc">Manage Accounts</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_about">About</string>
+    
+<!-- ManageAccountss -->
+	<string name="ma_activity_title">Manage Accounts</string>
+	<string name="ma_name">Account Name: </string>
+	<string name="ma_cash">Cash: </string>
+	<string name="ma_btn_add">ADD</string>
+	<string name="ma_dlg_title">Edit Account</string>
+	<string name="ma_dlg_btn_ok">OK</string>
+	<string name="ma_dlg_btn_delete">Delete</string>
+    
+<!-- MoneyAlarmReceiver -->    
+    <string name="aboutDlg_title">About</string>
+    <string name="aboutDlg_message">This application is for user to record the expense of lives.</string>
+    <string name="aboutDlg_btn">OK</string>
+    
+   	<string name="alarmDlg_title">Money</string>
+
+</resources>

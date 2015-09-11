@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <PreferenceCategory 
+        android:key="pref_f1_budget"
+        android:title="@string/setting_f1_budget_title">
+        
+        <EditTextPreference 
+		    android:key="SET_BUDGET"
+		    android:title="@string/edt_title"
+		    android:dialogTitle="@string/edtdlg_title"
+		    android:dialogMessage="@string/edtdlg_meg"
+		    android:inputType="numberDecimal"
+		    android:positiveButtonText="OK"
+		    android:negativeButtonText="Cencel"	/>
+        
+        <CheckBoxPreference
+	        android:key="CBOX_ALARM"
+	        android:title="@string/cbox_title"
+	        android:summary="@string/cbox_sum"	
+	        android:defaultValue="false"	>
+	    </CheckBoxPreference>
+	    
+	    <Preference
+	        android:key="SET_ALARM"
+	        android:dependency="CBOX_ALARM"
+	        android:title="@string/prf_alarm_title"
+	        android:summary="@string/prf_alarm_sum"	>  
+	    </Preference>
+        
+    </PreferenceCategory>
+    
+	<PreferenceCategory
+	    android:key="pref_f2_notify"
+        android:title="@string/setting_f2_notify_title">
+        
+	    <CheckBoxPreference
+            android:key="CBOX_NOTIFY"
+		    android:title="@string/cbox_notify_title"
+		    android:summary="@string/cbox_notify_sum">
+        </CheckBoxPreference>
+         
+        <MultiSelectListPreference
+            android:key="MSList_NOTIFY_TIME"
+            android:dependency="CBOX_NOTIFY"
+            android:title="@string/mslist_title"
+            android:summary="@string/mslist_sum"
+            android:dialogTitle="@string/mslist_dlg_title"
+            android:entries="@array/time_string"
+            android:entryValues="@array/time_value"
+            android:defaultValue="@array/empty_array"
+            android:positiveButtonText="OK">          
+        </MultiSelectListPreference>
+	    
+	</PreferenceCategory>
+	
+	<PreferenceCategory
+	    android:key="pref_f3_backup"
+        android:title="@string/setting_f3_backup_title">
+        
+	    <CheckBoxPreference
+            android:key="CBOX_BACKUP"
+		    android:title="@string/cbox_backup_title"
+		    android:summary="@string/cbox_backup_sum">
+        </CheckBoxPreference>
+        
+	    <Preference
+	        android:key="RECOVER_DATA"
+	        android:dependency="CBOX_BACKUP"
+	        android:title="@string/prf_recover_data_title"	>  
+	    </Preference>
+        
+	</PreferenceCategory>
+    
+</PreferenceScreen>

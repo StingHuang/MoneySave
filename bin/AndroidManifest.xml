@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sting.moneysave"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="21" />
+    
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.Light" >
+        
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.sting.moneysave.AddNewItemActivity"
+            android:label="@string/addActivity_title"
+            android:parentActivityName="com.sting.moneysave.MainActivity"	>
+            
+        </activity>
+        
+        <activity
+            android:name="com.sting.moneysave.AnalysisActivity"
+            android:label="@string/analysisActivity_title"
+            android:parentActivityName="com.sting.moneysave.MainActivity"	>
+            
+        </activity>
+        
+        <activity
+            android:name="com.sting.moneysave.ManageAccountActivity"
+            android:label="@string/ma_activity_title"
+            android:parentActivityName="com.sting.moneysave.MainActivity"
+            android:windowSoftInputMode="stateHidden"	>
+            
+        </activity>
+        
+        <activity 
+            android:name="com.sting.moneysave.MoneyPreference"	
+            android:label="@string/setting_activity_title"
+            android:parentActivityName="com.sting.moneysave.MainActivity"> 
+        </activity>
+        
+        <service 
+            android:name="com.sting.moneysave.BackupService"
+            android:enabled="true"></service>
+        
+        <receiver android:name="com.sting.moneysave.MoneyAlarmReceiver"	/>
+        
+        <receiver 
+            android:name="com.sting.moneysave.BootReceiver"	>
+    		<intent-filter>
+        		<action android:name="android.intent.action.BOOT_COMPLETED"></action>
+    		</intent-filter>
+		</receiver>
+
+        <provider 
+            android:name=".providers.MoneySaveContentProvider"
+       		android:authorities="com.sting.moneysave.providers.MoneySaveContentProvider" />
+        
+    </application>
+
+</manifest>

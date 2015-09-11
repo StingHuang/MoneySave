@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#FFFF0000</color>
+    <color name="green">#FF00FF00</color>
+    <color name="blue">#FF0000FF</color>
+    <color name="gray">#FF888888</color>
+    <color name="ltgray">#FF444444</color>
+    <color name="dkgray">#FFCCCCCC</color>
+    <color name="yellow">#FFFFFF00</color>
+    <color name="cyan">#FF00FFFF</color>
+    <color name="magenta">#FFFF00FF</color>
+    <color name="transparent">#00000000</color>
+    
+    <color name="darkslategray">#FF2F4F4F</color>
+    <color name="steelblue">#FF4682B4</color>
+    <color name="darkcyan">#FF008B8B</color>
+    <color name="seagreen">#FF2E8B57</color>
+    <color name="darkgreen">#FF006400</color>
+    <color name="maroon">#FF800000</color>
+    <color name="darkslateblue">#FF483D8B</color>
+    <color name="cornflowerblue">#FF6495ED</color>
+    <color name="lightslategray">#FF778899</color>
+    <color name="teal">#FF008080</color>
+    <color name="hotpink">#FFFF69B4</color>
+    <color name="darkorchid">#FF9932CC</color>
+    <color name="powderblue">#FFB0E0E6</color>
+    <color name="cadetblue">#FF5F9EA0</color>
+    <color name="forestgreen">#FF228B22</color>
+    <color name="moccasin">#FFFFE4B5</color>
+    <color name="honeydew">#FFF0FFF0</color>
+    <color name="azure">#FFF0FFFF</color>
+    <color name="lightsteelblue">#FFB0C4DE</color>
+    <color name="silver">#FFC0C0C0</color>
+    <color name="limegreen">#FF32CD32</color>
+    <color name="orange">#FFFF5809</color>
+    <color name="darkviolet">#FF9400D3</color>
+    
+</resources>
