@@ -9,7 +9,7 @@ public class MoneySaveInfo {
     public static final String AUTHORITY = "com.sting.moneysave.providers.MoneySaveContentProvider";
     /** 用 db 實做 content provider */
     public static final String DB_NAME = "moneysave.db";
-    /** 小心！只要版本一改，舊資料會被清空 */
+    /** 只要版本一改，舊資料會被清空 */
     public static final int DB_VERSION = 3;
     
     private MoneySaveInfo(){};

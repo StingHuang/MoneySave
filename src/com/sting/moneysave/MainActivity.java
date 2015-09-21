@@ -182,18 +182,18 @@ public class MainActivity extends AppCompatActivity {
     		idLView_tag.setVisibility(View.VISIBLE);
     		idSpnTag.setSelection(item.getItemTag()-1);
     		idEdtItem.setText(item.getItem());
-			idLView_from.setVisibility(View.VISIBLE);
-			idSpnFrom.setSelection(alAccName.indexOf(item.getFrom()));
-			idLView_to.setVisibility(View.GONE);
+    		idLView_from.setVisibility(View.VISIBLE);
+    		idSpnFrom.setSelection(alAccName.indexOf(item.getFrom()));
+    		idLView_to.setVisibility(View.GONE);
     		break;
     	case iTypeIN:
     		idTxtType.setTextColor(getResources().getColor(color.limegreen));
     		idTxtType.setText(InString);
     		idLView_tag.setVisibility(View.GONE);
     		idEdtItem.setText(item.getItem());
-			idLView_from.setVisibility(View.GONE);
-			idLView_to.setVisibility(View.VISIBLE);
-		    idSpnTo.setSelection(alAccName.indexOf(item.getTo()));
+    		idLView_from.setVisibility(View.GONE);
+    		idLView_to.setVisibility(View.VISIBLE);
+    		idSpnTo.setSelection(alAccName.indexOf(item.getTo()));
     		break;
     	case iTypeEXC:
     		idTxtType.setTextColor(getResources().getColor(color.cadetblue));
