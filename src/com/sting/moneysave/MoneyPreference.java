@@ -30,7 +30,7 @@ import android.widget.Toast;
 
 public class MoneyPreference extends AppCompatActivity {
 
-    private static final String TAG = "MoneyPreference";
+	private static final String TAG = "MoneyPreference";
 	private SharedPreferences sharedPref;
 	private SharedPreferences.Editor editor;
 	private final String KEY_EdtBudget = "SET_BUDGET";
@@ -66,68 +66,67 @@ public class MoneyPreference extends AppCompatActivity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		getFragmentManager().beginTransaction()
-							.replace(android.R.id.content, new PrefsFragement()).commit();  
+		getFragmentManager().beginTransaction().replace(android.R.id.content, new PrefsFragement()).commit();  
 	}
 	
 	public class PrefsFragement extends PreferenceFragment {  
         
 		@Override  
-        public void onCreate(Bundle savedInstanceState) {  
-            // TODO Auto-generated method stub  
-            super.onCreate(savedInstanceState);  
-            addPreferencesFromResource(R.xml.m_preference);  
+		public void onCreate(Bundle savedInstanceState) {  
+            	// TODO Auto-generated method stub  
+            	super.onCreate(savedInstanceState);  
+            	addPreferencesFromResource(R.xml.m_preference);  
             
-            sharedPref = PreferenceManager.getDefaultSharedPreferences(MoneyPreference.this);
-            editor = sharedPref.edit();
+            	sharedPref = PreferenceManager.getDefaultSharedPreferences(MoneyPreference.this);
+            	editor = sharedPref.edit();
             
-            pEdtBudget = (EditTextPreference)findPreference(KEY_EdtBudget);
-            if(Integer.parseInt(sharedPref.getString(KEY_EdtBudget, "0"))!=0){
-        		mBudget = Integer.parseInt(sharedPref.getString(KEY_EdtBudget, "0"));
-        	 	pEdtBudget.setSummary(budget_sum + mBudget);
-        	}else{
+            	pEdtBudget = (EditTextPreference)findPreference(KEY_EdtBudget);
+            	if(Integer.parseInt(sharedPref.getString(KEY_EdtBudget, "0"))!=0){
+			mBudget = Integer.parseInt(sharedPref.getString(KEY_EdtBudget, "0"));
+				pEdtBudget.setSummary(budget_sum + mBudget);
+		}else{
         		mBudget = 0;
         		pEdtBudget.setSummary("");
-        	}
-            pCboxAlarm = (CheckBoxPreference)findPreference(KEY_CboxAlarm);
-            pSetAlarm = (Preference)findPreference(KEY_PrefSetAlarm);
-            if(!sharedPref.getString(KEY_PrefSetAlarm,"").matches(""))
+		}
+            	pCboxAlarm = (CheckBoxPreference)findPreference(KEY_CboxAlarm);
+            	pSetAlarm = (Preference)findPreference(KEY_PrefSetAlarm);
+            	if(!sharedPref.getString(KEY_PrefSetAlarm,"").matches(""))
             	clockTime = sharedPref.getString(KEY_PrefSetAlarm,"");
-            pSetAlarm.setSummary(alarm_sum + clockTime);
-        	alarm_h = Integer.parseInt(clockTime.split(":")[0]);
-        	alarm_m = Integer.parseInt(clockTime.split(":")[1]);
+            	pSetAlarm.setSummary(alarm_sum + clockTime);
+		alarm_h = Integer.parseInt(clockTime.split(":")[0]);
+		alarm_m = Integer.parseInt(clockTime.split(":")[1]);
             
-            pCboxNotify = (CheckBoxPreference)findPreference(KEY_CboxNotify);
-            pSetNotifyTime = (MultiSelectListPreference)findPreference(KEY_MSListNotifyTime);
+            	pCboxNotify = (CheckBoxPreference)findPreference(KEY_CboxNotify);
+            	pSetNotifyTime = (MultiSelectListPreference)findPreference(KEY_MSListNotifyTime);
             
-            pCboxBackup = (CheckBoxPreference)findPreference(KEY_CboxBackup);
-            pRecover = (Preference)findPreference(KEY_RecoverData);
+            	pCboxBackup = (CheckBoxPreference)findPreference(KEY_CboxBackup);
+            	pRecover = (Preference)findPreference(KEY_RecoverData);
             
-            pEdtBudget.setOnPreferenceChangeListener(setbudget);
-            pCboxAlarm.setOnPreferenceChangeListener(cbox_change);
-            pSetAlarm.setOnPreferenceClickListener(setalarm);
-            pCboxNotify.setOnPreferenceChangeListener(cbox_change);
-            pSetNotifyTime.setOnPreferenceChangeListener(select_time);
-            pCboxBackup.setOnPreferenceChangeListener(cbox_change);
-            pRecover.setOnPreferenceClickListener(showDlg);
+            	pEdtBudget.setOnPreferenceChangeListener(setbudget);
+            	pCboxAlarm.setOnPreferenceChangeListener(cbox_change);
+            	pSetAlarm.setOnPreferenceClickListener(setalarm);
+            	pCboxNotify.setOnPreferenceChangeListener(cbox_change);
+            	pSetNotifyTime.setOnPreferenceChangeListener(select_time);
+            	pCboxBackup.setOnPreferenceChangeListener(cbox_change);
+            	pRecover.setOnPreferenceClickListener(showDlg);
         }
 		
-		private Preference.OnPreferenceClickListener showDlg = new Preference.OnPreferenceClickListener() {
+	private Preference.OnPreferenceClickListener showDlg = new Preference.OnPreferenceClickListener() {
 			
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				// TODO Auto-generated method stub
-				AlertDialog.Builder recoverDlg = new AlertDialog.Builder(MoneyPreference.this);
-				recoverDlg.setTitle(R.string.recover_dlg_title);
-				recoverDlg.setMessage(R.string.recover_dlg_message);
-				recoverDlg.setPositiveButton(R.string.recover_dlg_btn_p, new DialogInterface.OnClickListener() {
+		@Override
+		public boolean onPreferenceClick(Preference preference) {
+			// TODO Auto-generated method stub
+			AlertDialog.Builder recoverDlg = new AlertDialog.Builder(MoneyPreference.this);
+			recoverDlg.setTitle(R.string.recover_dlg_title);
+			recoverDlg.setMessage(R.string.recover_dlg_message);
+			recoverDlg.setPositiveButton(R.string.recover_dlg_btn_p, new DialogInterface.OnClickListener() {
 					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-						final ProgressDialog PDialog = ProgressDialog.show(MoneyPreference.this, "Waiting", "Just a few minutes", true);
-						new Thread(){
-						    public void run(){
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				final ProgressDialog PDialog = ProgressDialog.show(MoneyPreference.this, "Waiting", "Just a few minutes", true);
+					new Thread(){
+						public void run(){
 						    	try{
 						    		InputStream inputStream1 = openFileInput(fileName_item);
 						    		if(inputStream1!=null){
@@ -160,23 +159,22 @@ public class MoneyPreference extends AppCompatActivity {
 						    	}
 						    	finally{
 						    		PDialog.dismiss();
-						     }
-						    }
-						}.start();
-					}
-				});
-				recoverDlg.setNegativeButton(R.string.recover_dlg_btn_n, new DialogInterface.OnClickListener() {
+							}
+						}
+					}.start();
+				}
+			});
+			recoverDlg.setNegativeButton(R.string.recover_dlg_btn_n, new DialogInterface.OnClickListener() {
 					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-						
-					}
-				});
-				recoverDlg.show();				
-				return true;
-			}
-		};
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+				}
+			});
+			recoverDlg.show();				
+			return true;
+		}
+	};
 		
 		private Preference.OnPreferenceChangeListener setbudget = 
 				new Preference.OnPreferenceChangeListener(){
@@ -243,8 +241,7 @@ public class MoneyPreference extends AppCompatActivity {
 				new Preference.OnPreferenceChangeListener(){
 
 			@Override
-			public boolean onPreferenceChange(Preference preference,
-					Object newValue) {
+			public boolean onPreferenceChange(Preference preference, Object newValue) {
 				// TODO Auto-generated method stub
 				@SuppressWarnings("unchecked")
 				Set<String> selected = (Set<String>) newValue;
@@ -257,7 +254,7 @@ public class MoneyPreference extends AppCompatActivity {
 				return true;
 			}
 		};
-    }
+	}
 	
 	private void setAlarm(boolean turnOn){
 		Calendar c_alarm = Calendar.getInstance();
