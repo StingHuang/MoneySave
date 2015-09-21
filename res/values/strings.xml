@@ -136,6 +136,6 @@
     <string name="aboutDlg_message">This application is for user to record the expense of lives.</string>
     <string name="aboutDlg_btn">OK</string>
     
-   	<string name="alarmDlg_title">Money</string>
+   	<string name="alarmDlg_title">MoneySave</string>
 
 </resources>

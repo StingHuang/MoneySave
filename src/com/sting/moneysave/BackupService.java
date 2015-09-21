@@ -12,6 +12,7 @@ import android.util.Log;
 
 public class BackupService extends Service {
 
+    private static final String TAG = "BackupService";
 	private final String fileName_item = "MoneySave_ItemData.txt";
 	private final String fileName_account = "MoneySave_AccountData.txt";
 	private FileOutputStream outputStream;
@@ -47,7 +48,7 @@ public class BackupService extends Service {
 	public void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
-		Log.d("BackupService", "onDestroy....");
+		Log.d(TAG, "onDestroy....");
 		sHandler.removeCallbacks(backupFile);
 	}
 
@@ -61,14 +62,14 @@ public class BackupService extends Service {
 	private boolean writeFile(){
 		boolean done = false;
 		try {
-			Log.d("BackupService", "writeFile.... ing");
+			Log.d(TAG, "writeFile.... ing");
 			
 			outputStream = openFileOutput(fileName_item, MODE_PRIVATE);
 			bufferedOutputStream = new BufferedOutputStream(outputStream);
 			List<Items> allItems = ItemsHelper.listAllItems(getContentResolver());
 			for(Items i : allItems){
 				String line = i.writeToFile() + "\n";
-				Log.d("BackupService", line);
+				Log.d(TAG, line);
 				bufferedOutputStream.write(line.getBytes());
 			}
 			bufferedOutputStream.close();
@@ -78,12 +79,12 @@ public class BackupService extends Service {
 			List<Accounts> allAccounts = AccountsHelper.listAccounts(getContentResolver());
 			for(Accounts a : allAccounts){
 				String line = a.writeToFile() + "\n";
-				Log.d("BackupService", line);
+				Log.d(TAG, line);
 				bufferedOutputStream.write(line.getBytes());
 			}
 			bufferedOutputStream.close();
 			
-			Log.d("BackupService", "writeFile.... done");
+			Log.d(TAG, "writeFile.... done");
 			done = true;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

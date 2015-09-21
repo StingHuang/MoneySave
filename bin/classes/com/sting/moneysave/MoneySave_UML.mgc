@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class
+        name="com.sting.moneysave.providers.MoneySaveInfo.MoneyAccountsTableMetaData"
+        x="478" y="-63">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sting.moneysave.AddNewItemActivity" x="409" y="616">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="com.sting.moneysave.Items"
+            endpointName="newItem" kind="Simple"/>
+        <Communication destinationClassName="com.sting.moneysave.AccountsHelper"/>
+        <Communication destinationClassName="com.sting.moneysave.Accounts"/>
+        <Communication destinationClassName="com.sting.moneysave.Items"/>
+        <Communication destinationClassName="com.sting.moneysave.ItemsHelper"/>
+    </Class>
+    <Class name="com.sting.moneysave.AccountsHelper" x="480" y="-7">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="com.sting.moneysave.Accounts"/>
+    </Class>
+    <Class name="com.sting.moneysave.Accounts" x="1023" y="606">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sting.moneysave.providers.MoneySaveInfo" x="18" y="799">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sting.moneysave.MoneyPreference" x="759" y="492">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="com.sting.moneysave.Items"/>
+        <Communication destinationClassName="com.sting.moneysave.Accounts"/>
+    </Class>
+    <Class name="com.sting.moneysave.ItemAdapter2" x="675" y="8">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="com.sting.moneysave.Items"
+            endpointName="items" kind="Simple"/>
+        <Communication destinationClassName="com.sting.moneysave.Items"/>
+    </Class>
+    <Class
+        name="com.sting.moneysave.providers.MoneySaveContentProvider.DBHelper"
+        x="127" y="813">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sting.moneysave.MainActivity.exeUpdateDataBase"
+        x="242" y="568">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="com.sting.moneysave.MainActivity"/>
+    </Class>
+    <Class name="com.sting.moneysave.AnalysisActivity" x="846" y="335">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="com.sting.moneysave.Items"
+            endpointName="money_items" kind="Simple"/>
+        <Communication destinationClassName="com.sting.moneysave.Items"/>
+        <Communication destinationClassName="com.sting.moneysave.ItemsHelper"/>
+    </Class>
+    <Class name="com.sting.moneysave.MainActivity" x="333" y="62">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="com.sting.moneysave.Items"
+            endpointName="dlg_ItemOld" kind="Simple">
+            <Point x="654" y="388"/>
+        </Association>
+        <Association destinationClassName="com.sting.moneysave.Items"
+            endpointName="money_items" kind="Simple">
+            <Point x="741" y="191"/>
+        </Association>
+        <Association
+            destinationClassName="com.sting.moneysave.ItemAdapter2"
+            endpointName="itemadapter" kind="Simple"/>
+        <Communication destinationClassName="com.sting.moneysave.AccountsHelper"/>
+        <Communication destinationClassName="com.sting.moneysave.Items"/>
+        <Communication destinationClassName="com.sting.moneysave.Accounts"/>
+        <Communication destinationClassName="com.sting.moneysave.ItemsHelper"/>
+        <Communication destinationClassName="com.sting.moneysave.ItemAdapter2"/>
+    </Class>
+    <Class name="com.sting.moneysave.MoneyPreference.PrefsFragement"
+        x="936" y="-60">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="com.sting.moneysave.MoneyPreference"/>
+    </Class>
+    <Class name="com.sting.moneysave.providers.MoneySaveContentProvider"
+        x="17" y="663">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.sting.moneysave.providers.MoneySaveContentProvider.DBHelper"
+            endpointName="dbHelper" kind="Simple"/>
+        <Communication destinationClassName="com.sting.moneysave.providers.MoneySaveContentProvider.DBHelper"/>
+    </Class>
+    <Class name="com.sting.moneysave.BootReceiver" x="16" y="414">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sting.moneysave.Items" x="874" y="95">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sting.moneysave.AccountAdapter" x="1114" y="433">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="com.sting.moneysave.Accounts"
+            endpointName="accounts" kind="Simple">
+            <Point x="1196" y="661"/>
+        </Association>
+        <Communication destinationClassName="com.sting.moneysave.Accounts"/>
+    </Class>
+    <Class
+        name="com.sting.moneysave.providers.MoneySaveInfo.MoneyItemsTableMetaData"
+        x="294" y="-64">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sting.moneysave.ItemsHelper" x="295" y="-6">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="com.sting.moneysave.Items"/>
+    </Class>
+    <Class name="com.sting.moneysave.BackupService" x="16" y="-70">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="com.sting.moneysave.AccountsHelper"/>
+        <Communication destinationClassName="com.sting.moneysave.Items"/>
+        <Communication destinationClassName="com.sting.moneysave.Accounts"/>
+        <Communication destinationClassName="com.sting.moneysave.ItemsHelper"/>
+    </Class>
+    <Class name="com.sting.moneysave.ManageAccountActivity" x="1036" y="98">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.sting.moneysave.AccountAdapter"
+            endpointName="maAdapter" kind="Simple"/>
+        <Association destinationClassName="com.sting.moneysave.Accounts"
+            endpointName="acc_list" kind="Simple">
+            <Point x="1021" y="415"/>
+        </Association>
+        <Communication destinationClassName="com.sting.moneysave.AccountsHelper"/>
+        <Communication destinationClassName="com.sting.moneysave.Accounts"/>
+        <Communication destinationClassName="com.sting.moneysave.AccountAdapter"/>
+    </Class>
+    <Class name="com.sting.moneysave.MoneyAlarmReceiver" x="15" y="152">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="com.sting.moneysave.ItemsHelper"/>
+    </Class>
+</ClassDiagram>

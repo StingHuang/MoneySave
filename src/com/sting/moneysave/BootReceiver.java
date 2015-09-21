@@ -21,10 +21,10 @@ public class BootReceiver extends BroadcastReceiver {
 	private final String KEY_CboxBackup = "CBOX_BACKUP";
 	private final String KEY_MSListNotifyTime = "MSList_NOTIFY_TIME";
 	private final String Boot_Action = "android.intent.action.BOOT_COMPLETED";
-	private final String KEY_Receiver = "MAR_key";
-	private final String Receiver_Alarm = "type2";
-	private final String Receiver_Notify = "type3";
-	private final String Receiver_Backup = "type4";
+	private final String KEY_Receiver = "Key_Receiver_type";
+	private final String Receiver_Alarm = "budget_alarm";
+	private final String Receiver_Notify = "time_notification";
+	private final String Receiver_Backup = "backup_service";
 	private final String backupTime = "23:59";
 	private final long oneday = 86400000;
 	

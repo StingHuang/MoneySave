@@ -32,6 +32,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
 	private final int iTypeOUT = 1, iTypeIN = 2, iTypeEXC = 3;
 	private final int iTagNO = 0;
 	private final String OutString = "支出", InString = "收入", ExcString = "轉移"; 
@@ -98,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
     }
     
     private void setListView(int yy, int mm){
-    	Log.d("MainActivity", "setListView...... "+yy+"/"+mm);
+    	Log.d(TAG, "setListView...... "+yy+"/"+mm);
     	money_items = ItemsHelper.listItems(MainActivity.this, Integer.toString(mm), yy);
   	  	itemadapter = new ItemAdapter2(this, money_items);
   	  	mListView.setAdapter(itemadapter);
@@ -192,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
     		idEdtItem.setText(item.getItem());
 			idLView_from.setVisibility(View.GONE);
 			idLView_to.setVisibility(View.VISIBLE);
-			idSpnTo.setSelection(alAccName.indexOf(item.getTo()));
+		    idSpnTo.setSelection(alAccName.indexOf(item.getTo()));
     		break;
     	case iTypeEXC:
     		idTxtType.setTextColor(getResources().getColor(color.cadetblue));
@@ -378,7 +379,7 @@ public class MainActivity extends AppCompatActivity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		Log.d("MainActivity", "onActivityResult......");
+		Log.d(TAG, "onActivityResult......");
 		Bundle bundle = data.getExtras();
 		if (requestCode == addNew_requestCode && resultCode == Activity.RESULT_OK) {
 			if(bundle.getBoolean(KEY_IsADD)){

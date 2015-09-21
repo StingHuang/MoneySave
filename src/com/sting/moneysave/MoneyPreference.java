@@ -30,6 +30,7 @@ import android.widget.Toast;
 
 public class MoneyPreference extends AppCompatActivity {
 
+    private static final String TAG = "MoneyPreference";
 	private SharedPreferences sharedPref;
 	private SharedPreferences.Editor editor;
 	private final String KEY_EdtBudget = "SET_BUDGET";
@@ -40,10 +41,10 @@ public class MoneyPreference extends AppCompatActivity {
 	private final String KEY_CboxBackup = "CBOX_BACKUP";
 	private final String KEY_RecoverData = "RECOVER_DATA";
 	
-	private final String KEY_Receiver = "MAR_key";
-	private final String Receiver_Alarm = "type2";
-	private final String Receiver_Notify = "type3";
-	private final String Receiver_Backup = "type4";
+	private final String KEY_Receiver = "Key_Receiver_type";
+	private final String Receiver_Alarm = "budget_alarm";
+	private final String Receiver_Notify = "time_notification";
+	private final String Receiver_Backup = "backup_service";
 	private final long oneday = 86400000;
 	
 	private final String fileName_item = "MoneySave_ItemData.txt";
@@ -258,7 +259,7 @@ public class MoneyPreference extends AppCompatActivity {
 		};
     }
 	
-	public void setAlarm(boolean turnOn){
+	private void setAlarm(boolean turnOn){
 		Calendar c_alarm = Calendar.getInstance();
 		c_alarm.set(Calendar.HOUR_OF_DAY, alarm_h);
 		c_alarm.set(Calendar.MINUTE, alarm_m);
@@ -274,18 +275,18 @@ public class MoneyPreference extends AppCompatActivity {
 		if(turnOn)
 		{
 			if((c_alarm.getTimeInMillis()-System.currentTimeMillis())>0){
-				Log.d("MoneyPreference", "Alarm turn ON for "+alarm_h+":"+alarm_m);
+				Log.d(TAG, "Alarm turn ON for "+alarm_h+":"+alarm_m);
 				am.setRepeating(AlarmManager.RTC_WAKEUP, c_alarm.getTimeInMillis(),
 	                    		AlarmManager.INTERVAL_DAY, pi);
 			}
 			else{
-				Log.d("MoneyPreference", "NEXTDAY Alarm turn ON for "+alarm_h+":"+alarm_m);
+				Log.d(TAG, "NEXTDAY Alarm turn ON for "+alarm_h+":"+alarm_m);
 				am.setRepeating(AlarmManager.RTC_WAKEUP, c_alarm.getTimeInMillis()+oneday,
                 				AlarmManager.INTERVAL_DAY, pi);
 			}
 		}
 		else{
-			Log.d("MoneyPreference", "Alarm turn OFF ");
+			Log.d(TAG, "Alarm turn OFF ");
 			am.cancel(pi);
 		}
 	}
@@ -310,11 +311,11 @@ public class MoneyPreference extends AppCompatActivity {
 					if((c_alarm.getTimeInMillis()-System.currentTimeMillis())>0){
 						notifyAlarm.setRepeating(AlarmManager.RTC_WAKEUP, c_alarm.getTimeInMillis(),
     												AlarmManager.INTERVAL_DAY, pendingIntent);
-						Log.d("MoneyPreference", "setNotify "+ time+":00"+" TODAY");
+						Log.d(TAG, "setNotify "+ time+":00"+" TODAY");
 					}else{
 						notifyAlarm.setRepeating(AlarmManager.RTC_WAKEUP, c_alarm.getTimeInMillis()+oneday,
 								AlarmManager.INTERVAL_DAY, pendingIntent);
-						Log.d("MoneyPreference", "setNotify "+ time+":00"+" NEXTDAY");
+						Log.d(TAG, "setNotify "+ time+":00"+" NEXTDAY");
 					}
 					i++;
 				}	

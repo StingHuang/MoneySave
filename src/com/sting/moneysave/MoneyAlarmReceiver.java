@@ -18,10 +18,10 @@ import android.view.WindowManager;
 
 public class MoneyAlarmReceiver extends BroadcastReceiver {
 
-	private final String KEY_Receiver = "MAR_key";
-	private final String Receiver_Alarm = "type2";
-	private final String Receiver_Notify = "type3";
-	private final String Receiver_Backup = "type4";
+	private final String KEY_Receiver = "Key_Receiver_type";
+	private final String Receiver_Alarm = "budget_alarm";
+	private final String Receiver_Notify = "time_notification";
+	private final String Receiver_Backup = "backup_service";
 	private final String KEY_SetBudget = "SET_BUDGET";
 	private String dlg_megLine1 = "Today's cost: NT$";
 	private String dlg_megLine2_over = "\n\nOverspend by NT$";
