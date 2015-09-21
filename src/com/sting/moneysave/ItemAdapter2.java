@@ -15,21 +15,21 @@ public class ItemAdapter2 extends BaseAdapter {
 
 	private final int iTypeOUT = 1, iTypeIN = 2, iTypeEXC = 3;
 	private LayoutInflater myInflater;
-    private List<Items> items;
+    	private List<Items> items;
     
-    public ItemAdapter2(Context context,List<Items> item){
-        myInflater = LayoutInflater.from(context);
-        this.items = item;
-    }
+	public ItemAdapter2(Context context,List<Items> item){
+        	myInflater = LayoutInflater.from(context);
+        	this.items = item;
+	}
     
-    private class ViewHolder {
-        TextView txtDate, txtItem, txtCost;
-        public ViewHolder(TextView txtDate, TextView txtItem, TextView txtCost){
-                this.txtDate = txtDate;
-                this.txtItem = txtItem;
-                this.txtCost = txtCost;
-        }
-    }
+	private class ViewHolder {
+		TextView txtDate, txtItem, txtCost;
+		public ViewHolder(TextView txtDate, TextView txtItem, TextView txtCost){
+                	this.txtDate = txtDate;
+                	this.txtItem = txtItem;
+                	this.txtCost = txtCost;
+        	}
+	}
 	
 	@Override
 	public int getCount() {
@@ -53,15 +53,15 @@ public class ItemAdapter2 extends BaseAdapter {
 		// TODO Auto-generated method stub
 		ViewHolder holder = null;
 		if(convertView==null){
-		        convertView = myInflater.inflate(R.layout.one_item_adapter, null);
-		        holder = new ViewHolder(
+			convertView = myInflater.inflate(R.layout.one_item_adapter, null);
+			holder = new ViewHolder(
 		                (TextView) convertView.findViewById(R.id.txt_date),
 		                (TextView) convertView.findViewById(R.id.txt_item),
 		                (TextView) convertView.findViewById(R.id.txt_cost)
 		                );
-		        convertView.setTag(holder);
+			convertView.setTag(holder);
 		}else{
-		        holder = (ViewHolder) convertView.getTag();
+			holder = (ViewHolder) convertView.getTag();
 		}
 		
 		Items item = (Items)getItem(position);
