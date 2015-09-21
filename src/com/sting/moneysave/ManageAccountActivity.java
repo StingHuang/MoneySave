@@ -80,8 +80,7 @@ public class ManageAccountActivity extends AppCompatActivity {
 	private AdapterView.OnItemLongClickListener editAccount = new AdapterView.OnItemLongClickListener() {
 
 		@Override
-		public boolean onItemLongClick(AdapterView<?> parent, View view,
-				int position, long id) {
+		public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 			// TODO Auto-generated method stub
 			Accounts acc = maAdapter.getItem(position);
 			showAccountDialog(acc, position);
@@ -135,5 +134,5 @@ public class ManageAccountActivity extends AppCompatActivity {
 		maEdtCash = (EditText)findViewById(R.id.edtAccCash);
 		maEdtName.setText("");
 		maEdtCash.setText("");
-    }
+	}
 }
