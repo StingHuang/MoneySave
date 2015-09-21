@@ -12,7 +12,7 @@ import android.util.Log;
 
 public class BackupService extends Service {
 
-    private static final String TAG = "BackupService";
+    	private static final String TAG = "BackupService";
 	private final String fileName_item = "MoneySave_ItemData.txt";
 	private final String fileName_account = "MoneySave_AccountData.txt";
 	private FileOutputStream outputStream;
