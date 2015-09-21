@@ -48,40 +48,40 @@ public class AddNewItemActivity extends AppCompatActivity {
 		mCalendar = Calendar.getInstance();
 		newItem = new Items();
 		setView();
-        setSpinList();
-        setClickedEvent();
+        	setSpinList();
+        	setClickedEvent();
 	}
 
 	private void setView(){
-    	mEdtDate = (EditText)findViewById(R.id.edt_date);
-    	mEdtDate.setText(StingFunction.toDateString(mCalendar.getTimeInMillis()));
-    	mEdtCash = (EditText)findViewById(R.id.edt_cash);
-    	mEdtItem = (EditText)findViewById(R.id.edt_item);
-    	mSpnType = (Spinner)findViewById(R.id.spn_type);
-    	mSpnTag = (Spinner)findViewById(R.id.spn_tag);
-    	mSpnFrom = (Spinner)findViewById(R.id.spn_cashFROM);
-    	mSpnTo = (Spinner)findViewById(R.id.spn_cashTO);
-    	mBtnOK = (Button)findViewById(R.id.btn_ok);
-    	mBtnOK.setVisibility(View.VISIBLE);
-    	mLView_tag = (LinearLayout)findViewById(R.id.view_tag);
-    	mLView_item = (LinearLayout)findViewById(R.id.view_item);
-    	mLView_from = (LinearLayout)findViewById(R.id.view_cash_from);
-    	mLView_to = (LinearLayout)findViewById(R.id.view_cash_to);
-    }
+    		mEdtDate = (EditText)findViewById(R.id.edt_date);
+    		mEdtDate.setText(StingFunction.toDateString(mCalendar.getTimeInMillis()));
+    		mEdtCash = (EditText)findViewById(R.id.edt_cash);
+    		mEdtItem = (EditText)findViewById(R.id.edt_item);
+    		mSpnType = (Spinner)findViewById(R.id.spn_type);
+    		mSpnTag = (Spinner)findViewById(R.id.spn_tag);
+    		mSpnFrom = (Spinner)findViewById(R.id.spn_cashFROM);
+    		mSpnTo = (Spinner)findViewById(R.id.spn_cashTO);
+    		mBtnOK = (Button)findViewById(R.id.btn_ok);
+    		mBtnOK.setVisibility(View.VISIBLE);
+    		mLView_tag = (LinearLayout)findViewById(R.id.view_tag);
+    		mLView_item = (LinearLayout)findViewById(R.id.view_item);
+    		mLView_from = (LinearLayout)findViewById(R.id.view_cash_from);
+    		mLView_to = (LinearLayout)findViewById(R.id.view_cash_to);
+	}
 	
 	private void setSpinList(){
 		accounts = (String[]) AccountsHelper.getAllAccName(getContentResolver()).toArray(new String[0]);
-    	mCFromList = new ArrayAdapter<String>(AddNewItemActivity.this, R.layout.my_simple_spinner, accounts);
-    	mSpnFrom.setAdapter(mCFromList);
-    	mCToList = new ArrayAdapter<String>(AddNewItemActivity.this, R.layout.my_simple_spinner, accounts);
-    	mSpnTo.setAdapter(mCToList);
+    		mCFromList = new ArrayAdapter<String>(AddNewItemActivity.this, R.layout.my_simple_spinner, accounts);
+    		mSpnFrom.setAdapter(mCFromList);
+    		mCToList = new ArrayAdapter<String>(AddNewItemActivity.this, R.layout.my_simple_spinner, accounts);
+    		mSpnTo.setAdapter(mCToList);
 	}
 	
 	private void setClickedEvent(){
 		mEdtDate.setOnClickListener(edt_clicked);
-    	mSpnType.setOnItemSelectedListener(spn_ItemSelected);
-    	mBtnOK.setOnClickListener(btn_clicked);
-    }
+    		mSpnType.setOnItemSelectedListener(spn_ItemSelected);
+    		mBtnOK.setOnClickListener(btn_clicked);
+    	}
 	
 	class exeDataBase extends Thread{
 		public void run() {
@@ -198,40 +198,36 @@ public class AddNewItemActivity extends AppCompatActivity {
 						mCalendar.get(Calendar.YEAR), 
 						mCalendar.get(Calendar.MONTH), 
 						mCalendar.get(Calendar.DAY_OF_MONTH) );
-		    	  dpd.setTitle(R.string.dlg_datepick);
-		    	  dpd.setMessage("");
-		    	  dpd.setCancelable(false);
-		    	  dpd.show(); 
+		    	  	dpd.setTitle(R.string.dlg_datepick);
+		    	  	dpd.setMessage("");
+		    	  	dpd.setCancelable(false);
+		    	  	dpd.show(); 
 				break;
 			}
 		}
 	};
-	private DatePickerDialog.OnDateSetListener datePickerDlgOnDateSet = 
-    		new DatePickerDialog.OnDateSetListener(){
+	private DatePickerDialog.OnDateSetListener datePickerDlgOnDateSet = new DatePickerDialog.OnDateSetListener(){
 
-				@Override
-				public void onDateSet(DatePicker view, int year,
-						int monthOfYear, int dayOfMonth) {
-					// TODO Auto-generated method stub
-					mCalendar.set(Calendar.YEAR, year);
-					mCalendar.set(Calendar.MONTH, monthOfYear);
-					mCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-					String tDate = StingFunction.toDateString(mCalendar.getTimeInMillis());
-			  	  	mEdtDate.setText(tDate);
-			  	  	try {
-			  	  		mDStamp = StingFunction.toDateStamp(tDate);
-					} catch (ParseException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-			  	  	mDYear = year;
-			  	  	mDMonth = monthOfYear+1;
-			  	  	mDDay = dayOfMonth;
-				}	
-    };
-    
-    
-    
+		@Override
+		public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+			// TODO Auto-generated method stub
+			mCalendar.set(Calendar.YEAR, year);
+			mCalendar.set(Calendar.MONTH, monthOfYear);
+			mCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+			String tDate = StingFunction.toDateString(mCalendar.getTimeInMillis());
+			mEdtDate.setText(tDate);
+			try {
+				mDStamp = StingFunction.toDateStamp(tDate);
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			mDYear = year;
+			mDMonth = monthOfYear+1;
+			mDDay = dayOfMonth;
+		}	
+    	};
+
     private AdapterView.OnItemSelectedListener spn_ItemSelected = 
     		new AdapterView.OnItemSelectedListener(){
 
