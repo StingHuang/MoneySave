@@ -199,11 +199,11 @@ public class MainActivity extends AppCompatActivity {
     		idTxtType.setTextColor(getResources().getColor(color.cadetblue));
     		idTxtType.setText(ExcString);
     		idLView_tag.setVisibility(View.GONE);
-			idLView_item.setVisibility(View.GONE);
-			idLView_from.setVisibility(View.VISIBLE);
-			idSpnFrom.setSelection(alAccName.indexOf(item.getFrom()));
-			idLView_to.setVisibility(View.VISIBLE);
-			idSpnTo.setSelection(alAccName.indexOf(item.getTo()));
+    	    idLView_item.setVisibility(View.GONE);
+    	    idLView_from.setVisibility(View.VISIBLE);
+    	    idSpnFrom.setSelection(alAccName.indexOf(item.getFrom()));
+    	    idLView_to.setVisibility(View.VISIBLE);
+    	    idSpnTo.setSelection(alAccName.indexOf(item.getTo()));
     		break;
     	}
     	
