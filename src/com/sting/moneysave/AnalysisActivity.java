@@ -20,7 +20,7 @@ public class AnalysisActivity extends AppCompatActivity {
 	private LinearLayout mLinearLayout, LLcostlist;
 	
 	private final int Total = 0, iTagEat = 1, iTagCth = 2, iTagHos = 3,
-						iTagTff = 4, iTagFun = 5, iTagEdu = 6;
+			iTagTff = 4, iTagFun = 5, iTagEdu = 6;
 
 	private String[] costS = {"食: NT$", "衣: NT$", "住: NT$", "行: NT$", "樂: NT$", "育: NT$"};
 	private float[] data_cost = new float[7];
