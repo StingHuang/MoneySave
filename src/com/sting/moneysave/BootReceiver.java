@@ -37,18 +37,18 @@ public class BootReceiver extends BroadcastReceiver {
 			if(sharedPref.getBoolean(KEY_CboxAlarm, false)){
 				String clockTime = sharedPref.getString(KEY_PrefSetAlarm,"");
 				int alarm_h = Integer.parseInt(clockTime.split(":")[0]);
-	        	int alarm_m = Integer.parseInt(clockTime.split(":")[1]);
-	        	Calendar c_alarm = Calendar.getInstance();
-	    		c_alarm.set(Calendar.HOUR_OF_DAY, alarm_h);
-	    		c_alarm.set(Calendar.MINUTE, alarm_m);
-	    		Intent ait = new Intent(context, MoneyAlarmReceiver.class);
-	    		ait.putExtra(KEY_Receiver, Receiver_Alarm);
-	    		int requestCode = 10;
-	    		PendingIntent pi = PendingIntent.getBroadcast(
+				int alarm_m = Integer.parseInt(clockTime.split(":")[1]);
+				Calendar c_alarm = Calendar.getInstance();
+				c_alarm.set(Calendar.HOUR_OF_DAY, alarm_h);
+				c_alarm.set(Calendar.MINUTE, alarm_m);
+				Intent ait = new Intent(context, MoneyAlarmReceiver.class);
+				ait.putExtra(KEY_Receiver, Receiver_Alarm);
+				int requestCode = 10;
+				PendingIntent pi = PendingIntent.getBroadcast(
 	    							context, requestCode, ait, 
 	    							PendingIntent.FLAG_UPDATE_CURRENT);
-	    		AlarmManager am = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
-	    		if((c_alarm.getTimeInMillis()-System.currentTimeMillis())>0){
+				AlarmManager am = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+				if((c_alarm.getTimeInMillis()-System.currentTimeMillis())>0){
 					am.setRepeating(AlarmManager.RTC_WAKEUP, c_alarm.getTimeInMillis(),
 		                    		AlarmManager.INTERVAL_DAY, pi);
 				}
